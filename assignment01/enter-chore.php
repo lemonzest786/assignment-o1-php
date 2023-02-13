@@ -39,7 +39,7 @@
                     $cmd->execute();
                     $choremens = $cmd->fetchAll();
 
-                    // loop through the data to create a list item
+                    // looping through the data to create a list item
                     foreach ($choremens as $choremen) {
                         echo '<option>' . $choremen['choremen'] . '</option>';
                     }
@@ -62,7 +62,7 @@
                     $cmd->execute();
                     $typechores = $cmd->fetchAll();
 
-                    // loop through the data to create a list item
+                    // looping through the data to create a list item
                     foreach ($typechores as $typechore) {
                         echo '<option>' . $typechore['typechore'] . '</option>';
                     }
@@ -86,7 +86,7 @@
                     $cmd->execute();
                     $days = $cmd->fetchAll();
 
-                    // loop through the data to create a list item
+                    // looping through the data to create a list item
                     foreach ($days as $day) {
                         echo '<option>' . $day['day'] . '</option>';
                     }

@@ -54,7 +54,7 @@
         echo '</table>';
 
 
-        //disconnect
+        //disconnecting the database
         $db = null;
         ?>
     </main>

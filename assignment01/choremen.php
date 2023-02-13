@@ -23,13 +23,14 @@
     </header>
 
     <main>
-        <h2>Enter new choremen</h2>
+        <!--form for entering new choremen-->
+        <h2>ENTER NEW CHOREMEN</h2>
         <form action="save-choremen.php" method="post">
             <fieldset>
                 <label for="choremen">Name:</label>
                 <input type="text" name="choremen" required />
             </fieldset>
-            <button>Register</button>
+            <button class="btnSave">Register</button>
         </form>
     </main>
 </body>

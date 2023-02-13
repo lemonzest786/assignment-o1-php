@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saving your Registration...</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header>
+    <header>
         <nav>
             <ul>
                 <img id="logo" src="logo.png" alt="logo">
@@ -18,32 +20,33 @@
             </ul>
         </nav>
     </header>
-    
-    <main>
-    <?php
-    // capture user data from form POST
-    $choremen = $_POST['choremen'];
 
-        // connect
+    <main>
+        <?php
+        // capturing user data from form POST
+        $choremen = $_POST['choremen'];
+
+        // connecting to database
         $db = new PDO('mysql:host=172.31.22.43;dbname=Ronit200535182', 'Ronit200535182', 'nvqBTSUXEw');
 
-        // set up SQL insert
+        // setting up SQL INSERT    
         $sql = "INSERT INTO choremens (choremen) VALUES (:choremen)";
 
-        // set up and fill the parameter values for safety
+        // setting up and fill the parameter values for safety
         $cmd = $db->prepare($sql);
         $cmd->bindParam(':choremen', $choremen, PDO::PARAM_STR, 100);
 
-        // execute the sql command
+        // executing the sql command
         $cmd->execute();
 
-        // disconnect
+        // disconnecting
         $db = null;
 
-        // show confirmation
+        // displaying confirmation
         echo 'Successfully registered!';
-        
-    ?>
+
+        ?>
     </main>
 </body>
+
 </html>

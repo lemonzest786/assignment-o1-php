@@ -24,9 +24,13 @@
 
     <main>
         <?php
+        //creating variable
         $deleteId = $_POST['deleteId'];
+
+        //connecting to database
         $db = new PDO('mysql:host=172.31.22.43;dbname=Ronit200535182', 'Ronit200535182', 'nvqBTSUXEw');
 
+        //query for checking if id is available or not
         $sql = "SELECT * FROM chores WHERE choreId = $deleteId";
         $cmd = $db->prepare($sql);
         $cmd->execute();
@@ -34,6 +38,7 @@
 
         $yes = true;
 
+        //if else statement to execute new query if id is available
         if ($vali) {
             $sql = "DELETE FROM chores WHERE choreId = $deleteId";
 
