@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saving your Registration...</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>Deleting data</title>
+    <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
-<header>
+    <header>
         <nav>
             <ul>
                 <img id="logo" src="logo.png" alt="logo">
@@ -18,32 +21,33 @@
             </ul>
         </nav>
     </header>
-    
-    <main>
-    <?php
-    // capture user data from form POST
-    $choremen = $_POST['choremen'];
 
-        // connect
+    <main>
+        <?php
+        $deleteId = $_POST['deleteId'];
         $db = new PDO('mysql:host=172.31.22.43;dbname=Ronit200535182', 'Ronit200535182', 'nvqBTSUXEw');
 
-        // set up SQL insert
-        $sql = "INSERT INTO choremens (choremen) VALUES (:choremen)";
-
-        // set up and fill the parameter values for safety
+        $sql = "SELECT * FROM chores WHERE choreId = $deleteId";
         $cmd = $db->prepare($sql);
-        $cmd->bindParam(':choremen', $choremen, PDO::PARAM_STR, 100);
-
-        // execute the sql command
         $cmd->execute();
+        $vali = $cmd->fetch(PDO::FETCH_ASSOC);;
 
-        // disconnect
-        $db = null;
+        $yes = true;
 
-        // show confirmation
-        echo 'Successfully registered!';
-        
-    ?>
+        if ($vali) {
+            $sql = "DELETE FROM chores WHERE choreId = $deleteId";
+
+            $cmd = $db->prepare($sql);
+            $cmd->execute();
+
+            echo '<p class="saved">DELETED SUCCESSFULLY !!</p>';
+            ;
+        } else {
+            echo 'Error: Entered Id doesnt exists';
+        }
+
+        ?>
     </main>
 </body>
+
 </html>

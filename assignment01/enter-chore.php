@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Chore</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <img id="logo" src="logo.png" alt="logo">
+                <li><a href="./choremen.php">New Choremen</a></li>
+                <li><a href="./enter-chore.php">Enter Chores</a></li>
+                <li><a href="./chore-display.php">Display Chores</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
 
-        <h1>Add new completed chore</h1>
+        <h2>ADD NEW COMPLETED CHORES</h2>
         <form action="save-chore.php" method="post">
             <fieldset>
                 <label for="choremen">Choremen:</label>

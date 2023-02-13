@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body, select, button{
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    padding-top: 40px;
+}
+
+
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+nav{
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FC7A1E;
+}
+
+ul img{
+    width: 180px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+  
+li {
+    float: right;
+}
+  
+li a {
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover {
+    background-color: #f24c00;
+}
+
+fieldset {
+    border: none;
+    display: block;
+}
+textarea {
+    width: 50%;
+    height: 100px;
+}
+h1{
+    text-align: center;
+}
+table{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    margin: 0%;
+    padding: 0%;
+}
+td,tr,th{
+    border: 1px solid;
+    padding: 15px;
+    margin: auto;
+    text-align: left;
+}
+footer{
+    text-align: center;
+
+    justify-content: center;
+}
+fieldset {
+    border: none;
+
+}
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+.btnSave{
+    display: inline-block;
+    margin-left: 165px;
+}
+.saved{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(29, 209, 29);
+}
+
+textarea{
+    display: inline-block;
+    width: 330px;
+}
+form{
+    display: inline-block;
+}
+
+button{
+    background: #FC7A1E;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+    font-weight: 500;
+}
+button:hover{
+    background: #f24c00;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+
+}
+
+h2{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #f24c00;
+}

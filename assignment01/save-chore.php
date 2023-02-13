@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saving the chore data</title>
+    <link rel="stylesheet" href="style.css"/>
+
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <img id="logo" src="logo.png" alt="logo">
+                <li><a href="./choremen.php">New Choremen</a></li>
+                <li><a href="./enter-chore.php">Enter Chores</a></li>
+                <li><a href="./chore-display.php">Display Chores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
     <?php
     // capture the form body input using the $_POST array & store in a var
     $choremen = $_POST['choremen'];
@@ -22,7 +36,7 @@
     $ok = true;  // start with no validation errors
 
     if (empty($choremen)) {
-        echo '<p class="error">Post choremen is required.</p>';
+        echo '<p class="error">Choremen is required.</p>';
         $ok = false; // error happened - bad data
     }
 
@@ -61,9 +75,10 @@
         // disconnect
         $db = null;
 
-        // show the user a message
-        echo 'Data saved';
+        // displaying saved message
+        echo '<p class="saved">DATA SAVED !!</p>';
     }
     ?>
+    </main>
 </body>
 </html>
